@@ -1,0 +1,537 @@
+================================================================================
+             STRIVER A2Z DSA SHEET - COMPLETE PROBLEM LIST & LEETCODE MAP
+================================================================================
+
+Note: [LC #] indicates the official LeetCode problem ID.
+      [GFG/CN] indicates standard platform equivalents where LeetCode lacks a direct problem.
+
+--------------------------------------------------------------------------------
+STEP 1: LEARN THE BASICS
+--------------------------------------------------------------------------------
+[Basic Maths]
+- Count Digits                                          : [GFG/CN]
+- Reverse a Number                                      : LC 7 (Reverse Integer)
+- Check Palindrome Number                               : LC 9 (Palindrome Number)
+- GCD Or HCF (Euclidean Algorithm)                      : [GFG/CN]
+- Armstrong Numbers                                     : [LC 1134 (Premium) / GFG]
+- Print all Divisors                                    : [GFG/CN]
+- Check for Prime                                       : [GFG/CN]
+
+[Basic Recursion]
+- Print 1 to N using Recursion                          : [GFG/CN]
+- Print N to 1 using Recursion                          : [GFG/CN]
+- Sum of first N numbers                                : [GFG/CN]
+- Factorial of N numbers                                : [GFG/CN]
+- Reverse an Array                                      : LC 344 (Reverse String logic)
+- Check if string is Palindrome                         : LC 125 (Valid Palindrome)
+- Fibonacci Number                                      : LC 509 (Fibonacci Number)
+
+[Basic Hashing]
+- Counting frequencies of array elements                : [GFG/CN]
+- Find the highest/lowest frequency element             : LC 1838 / LC 692
+
+--------------------------------------------------------------------------------
+STEP 2: SORTING TECHNIQUES
+--------------------------------------------------------------------------------
+- Selection Sort                                        : [GFG/CN]
+- Bubble Sort                                           : [GFG/CN]
+- Insertion Sort                                        : [GFG/CN]
+- Merge Sort                                            : LC 912 (Sort an Array)
+- Recursive Bubble Sort                                 : [GFG/CN]
+- Recursive Insertion Sort                              : [GFG/CN]
+- Quick Sort                                            : LC 912 (Sort an Array)
+
+--------------------------------------------------------------------------------
+STEP 3: SOLVE PROBLEMS ON ARRAYS
+--------------------------------------------------------------------------------
+[Easy]
+- Largest Element in an Array                           : [GFG/CN]
+- Second Largest Element in an Array                    : [GFG/CN]
+- Check if the array is sorted and rotated              : LC 1752
+- Remove duplicates from Sorted array                   : LC 26
+- Left Rotate array by one place                        : LC 189
+- Left Rotate array by K places                         : LC 189
+- Move Zeroes to end                                    : LC 283
+- Linear Search                                         : [GFG/CN]
+- Union of Two Sorted Arrays                            : [GFG/CN]
+- Find the missing number in an array                   : LC 268
+- Maximum Consecutive Ones                              : LC 485
+- Find the number that appears once                     : LC 136 (Single Number)
+- Longest subarray with sum K (Positives)               : [GFG/CN]
+- Longest subarray with sum K (Positives + Negatives)   : [GFG/CN]
+
+[Medium]
+- 2 Sum Problem                                         : LC 1
+- Sort an array of 0's 1's and 2's (DNF)                : LC 75 (Sort Colors)
+- Majority Element (> N/2 times)                        : LC 169
+- Maximum Subarray Sum (Kadane's Algorithm)             : LC 53
+- Print Subarray with Maximum Subarray Sum              : LC 53 (Extension)
+- Best Time to Buy and Sell Stock                       : LC 121
+- Rearrange array elements by sign                      : LC 2149
+- Next Permutation                                      : LC 31
+- Leaders in an Array                                   : [GFG/CN]
+- Longest Consecutive Sequence                          : LC 128
+- Set Matrix Zeroes                                     : LC 73
+- Rotate Matrix by 90 degrees                           : LC 48
+- Spiral Matrix                                         : LC 54
+- Subarray Sum Equals K                                 : LC 560
+
+[Hard]
+- Pascal's Triangle                                     : LC 118
+- Majority Element (> N/3 times)                        : LC 229
+- 3 Sum Problem                                         : LC 15
+- 4 Sum Problem                                         : LC 18
+- Largest Subarray with 0 Sum                           : [GFG/CN]
+- Count number of subarrays with given XOR K            : [GFG/CN / InterviewBit]
+- Merge Overlapping Subintervals                        : LC 56
+- Merge two sorted arrays without extra space           : LC 88 (Merge Sorted Array)
+- Find the repeating and missing number                 : [GFG/CN]
+- Count Inversions                                      : [GFG/CN]
+- Reverse Pairs                                         : LC 493
+- Maximum Product Subarray                              : LC 152
+
+--------------------------------------------------------------------------------
+STEP 4: BINARY SEARCH
+--------------------------------------------------------------------------------
+[BS on 1D Arrays]
+- Binary Search to find X in sorted array               : LC 704
+- Implement Lower Bound / Upper Bound                   : LC 35 (Search Insert Position)
+- Search Insert Position                                : LC 35
+- Floor and Ceil in Sorted Array                        : [GFG/CN]
+- Find First and Last Position of Element               : LC 34
+- Count occurrences of a number in sorted array         : [GFG/CN]
+- Search in Rotated Sorted Array I                      : LC 33
+- Search in Rotated Sorted Array II                     : LC 81
+- Find Minimum in Rotated Sorted Array                  : LC 153
+- Find how many times array has been rotated            : [GFG/CN]
+- Single Element in a Sorted Array                      : LC 540
+- Find Peak Element                                     : LC 162
+
+[BS on Answers]
+- Find square root of a number in O(log N)              : LC 69 (Sqrt(x))
+- Find the Nth root of an Integer                       : [GFG/CN]
+- Koko Eating Bananas                                   : LC 875
+- Minimum days to make M bouquets                       : LC 1482
+- Find the smallest Divisor Given a Threshold           : LC 1283
+- Capacity to Ship Packages within D Days               : LC 1011
+- Kth Missing Positive Number                           : LC 1539
+- Aggressive Cows                                       : [GFG/CN / SPOJ]
+- Book Allocation Problem                               : [GFG/CN]
+- Split Array Largest Sum                               : LC 410
+- Painter's Partition Problem                           : [GFG/CN]
+- Minimize Max Distance to Gas Station                  : LC 774 (Premium)
+- Median of Two Sorted Arrays of different sizes        : LC 4
+- Kth element of two sorted arrays                      : [GFG/CN]
+
+[BS on 2D Arrays]
+- Find the row with maximum number of 1's               : [GFG/CN]
+- Search in a 2D Matrix I                               : LC 74
+- Search in a 2D Matrix II                              : LC 240
+- Find a Peak Element II                                : LC 1901
+- Matrix Median                                         : [GFG/CN]
+
+--------------------------------------------------------------------------------
+STEP 5: STRINGS (BASIC AND MEDIUM)
+--------------------------------------------------------------------------------
+[Basic]
+- Remove Outermost Parentheses                          : LC 1021
+- Reverse Words in a String                             : LC 151
+- Largest Odd Number in String                          : LC 1903
+- Longest Common Prefix                                 : LC 14
+- Isomorphic Strings                                    : LC 205
+- Rotate String                                         : LC 796
+- Valid Anagram                                         : LC 242
+
+[Medium]
+- Sort Characters by Frequency                          : LC 451
+- Maximum Nesting Depth of the Parentheses              : LC 1614
+- Roman to Integer                                      : LC 13
+- Integer to Roman                                      : LC 12
+- String to Integer (atoi)                              : LC 8
+- Count number of substrings with K distinct chars      : [GFG/CN]
+- Longest Palindromic Substring                         : LC 5
+- Sum of Beauty of All Substrings                       : LC 1781
+
+--------------------------------------------------------------------------------
+STEP 6: LINKED LIST
+--------------------------------------------------------------------------------
+[1D LinkedList & Doubly LinkedList Basics]
+- Introduction & Insertion/Deletion in Singly LL        : [GFG/CN]
+- Introduction & Insertion/Deletion in Doubly LL        : [GFG/CN]
+- Reverse a Doubly Linked List                          : [GFG/CN]
+
+[Medium Problems on LL]
+- Middle of the Linked List                             : LC 876
+- Reverse a LinkedList (Iterative & Recursive)          : LC 206
+- Detect a Loop in LL                                   : LC 141 (Linked List Cycle)
+- Find starting point of Loop in LL                     : LC 142 (Linked List Cycle II)
+- Length of Loop in LL                                  : [GFG/CN]
+- Check if LL is Palindrome                             : LC 234
+- Segregate even and odd nodes in LL                    : LC 328 (Odd Even Linked List)
+- Remove Nth node from the back of the LL               : LC 19
+- Delete the Middle Node of the LL                      : LC 2095
+- Sort a LL                                             : LC 148
+- Sort a LL of 0's 1's and 2's                          : [GFG/CN]
+- Find the intersection point of Y LL                   : LC 160
+- Add 1 to a number represented as LL                   : [GFG/CN]
+- Add two numbers in LL                                 : LC 2
+
+[Hard Problems on LL]
+- Reverse Nodes in k-Group                              : LC 25
+- Rotate List                                           : LC 61
+- Flattening of a LinkedList                            : [GFG/CN]
+- Flatten a Multilevel Doubly Linked List               : LC 430
+- Copy List with Random Pointer                         : LC 138
+
+--------------------------------------------------------------------------------
+STEP 7: RECURSION
+--------------------------------------------------------------------------------
+[Get a Strong Hold]
+- Pow(x, n)                                             : LC 50
+- Count Good Numbers                                    : LC 1922
+
+[Subsequences Pattern]
+- Generate all Binary Strings without consecutive 1s    : [GFG/CN]
+- Generate Parentheses                                  : LC 22
+- Subsets / Power Set                                   : LC 78
+- Learn All Combinations / Subset Sum I                 : [GFG/CN]
+- Combination Sum                                       : LC 39
+- Combination Sum II                                    : LC 40
+- Combination Sum III                                   : LC 216
+- Subsets II                                            : LC 90
+- Letter Combinations of a Phone Number                 : LC 17
+
+[Trying All Combinations / Hard]
+- Palindrome Partitioning                               : LC 131
+- Word Search                                           : LC 79
+- N-Queens                                              : LC 51
+- Rat in a Maze                                         : [GFG/CN]
+- Word Break                                            : LC 139
+- M Coloring Problem                                    : [GFG/CN]
+- Sudoku Solver                                         : LC 37
+- Expression Add Operators                              : LC 282
+
+--------------------------------------------------------------------------------
+STEP 8: BIT MANIPULATION
+--------------------------------------------------------------------------------
+[Learn Bit Manipulation]
+- Check if the i-th bit is set or not                   : [GFG/CN]
+- Check if a number is odd or not                       : [GFG/CN]
+- Check if a number is power of 2 or not                : LC 231
+- Count total set bits                                  : LC 191 (Number of 1 Bits)
+- Set/Clear/Toggle the i-th bit                         : [GFG/CN]
+- Divide Two Integers without *, / and mod              : LC 29
+
+[Interview Problems]
+- Minimum Bit Flips to Convert Number                   : LC 2220
+- Single Number I                                       : LC 136
+- Single Number II                                      : LC 137
+- Single Number III                                     : LC 260
+- XOR of Numbers from L to R                            : [GFG/CN]
+- Two numbers with odd occurrences                      : [GFG/CN]
+
+--------------------------------------------------------------------------------
+STEP 9: STACK AND QUEUES
+--------------------------------------------------------------------------------
+[Learning Basics]
+- Implement Stack using Arrays / Queues                 : LC 225
+- Implement Queue using Arrays / Stacks                 : LC 232
+- Valid Parentheses                                     : LC 20
+- Implement Min Stack                                   : LC 155
+
+[Prefix, Infix, Postfix]
+- Infix to Postfix / Prefix                             : [GFG/CN]
+- Prefix to Infix / Postfix                             : [GFG/CN]
+- Postfix to Prefix / Infix                             : [GFG/CN]
+
+[Monotonic Stack / Queue Problems]
+- Next Greater Element I                                : LC 496
+- Next Greater Element II                               : LC 503
+- Next Smaller Element                                  : [GFG/CN]
+- Number of NGEs to the right                           : [GFG/CN]
+- Trapping Rain Water                                   : LC 42
+- Sum of Subarray Minimums                              : LC 907
+- Asteroid Collision                                    : LC 735
+- Sum of Subarray Ranges                                : LC 2104
+- Remove K Digits                                       : LC 402
+- Largest Rectangle in Histogram                        : LC 84
+- Maximal Rectangle                                     : LC 85
+
+[Implementation Problems]
+- Sliding Window Maximum                                : LC 239
+- Online Stock Span                                     : LC 901
+- Rotting Oranges (Stack/Queue based)                   : LC 994
+- LRU Cache                                             : LC 146
+- LFU Cache                                             : LC 460
+
+--------------------------------------------------------------------------------
+STEP 10: SLIDING WINDOW & TWO POINTER
+--------------------------------------------------------------------------------
+[Medium]
+- Longest Substring Without Repeating Characters        : LC 3
+- Max Consecutive Ones III                              : LC 1004
+- Fruit Into Baskets                                    : LC 904
+- Longest Repeating Character Replacement               : LC 424
+- Binary Subarrays With Sum                             : LC 930
+- Count Number of Nice Subarrays                        : LC 1248
+- Number of Substrings Containing All Three Characters  : LC 1358
+- Maximum Points You Can Obtain from Cards              : LC 1423
+
+[Hard]
+- Longest Substring with at Most K Distinct Characters  : LC 340 (Premium) / [GFG]
+- Subarrays with K Different Integers                   : LC 992
+- Minimum Window Substring                              : LC 76
+- Minimum Window Subsequence                            : LC 727 (Premium) / [GFG]
+
+--------------------------------------------------------------------------------
+STEP 11: HEAPS
+--------------------------------------------------------------------------------
+[Learning]
+- Implementation of Priority Queue Binary Heap          : [GFG/CN]
+- Min Heap to Max Heap Conversion                       : [GFG/CN]
+- Check if an array represents a max heap               : [GFG/CN]
+
+[Medium]
+- Kth Largest Element in an Array                       : LC 215
+- Kth Smallest Element in an Array                      : [GFG/CN]
+- Sort K-Sorted Array                                   : [GFG/CN]
+- Merge M sorted Lists                                  : LC 23
+- Replace elements by its rank in the array             : LC 1331
+- Task Scheduler                                        : LC 621
+- Hand of Straights                                     : LC 846
+
+[Hard]
+- Design Twitter                                        : LC 355
+- Find Median from Data Stream                          : LC 295
+- Top K Frequent Elements                               : LC 347
+
+--------------------------------------------------------------------------------
+STEP 12: GREEDY ALGORITHMS
+--------------------------------------------------------------------------------
+[Easy / Medium]
+- Assign Cookies                                        : LC 455
+- Fractional Knapsack Problem                           : [GFG/CN]
+- Coin Change (Greedy for standard denominations)       : [GFG/CN]
+- Lemonade Change                                       : LC 860
+- Valid Parenthesis String                              : LC 678
+- N meetings in one room                                : [GFG/CN]
+- Non-overlapping Intervals                             : LC 435
+- Minimum Platforms Required for Railway                : [GFG/CN]
+- Job Sequencing Problem                                : [GFG/CN]
+- Candy                                                 : LC 135
+- Jump Game I                                           : LC 55
+- Jump Game II                                          : LC 45
+- Insert Interval                                       : LC 57
+
+--------------------------------------------------------------------------------
+STEP 13: BINARY TREES
+--------------------------------------------------------------------------------
+[Traversals]
+- Binary Tree Inorder Traversal                         : LC 94
+- Binary Tree Preorder Traversal                        : LC 144
+- Binary Tree Postorder Traversal                       : LC 145
+- Binary Tree Level Order Traversal                     : LC 102
+- Iterative Preorder Traversal                          : LC 144
+- Iterative Inorder Traversal                           : LC 94
+- Iterative Postorder (using 2 Stacks / 1 Stack)        : LC 145
+- Preorder, Inorder, and Postorder in One Traversal     : [CN]
+
+[Medium Problems]
+- Maximum Depth of Binary Tree                          : LC 104
+- Balanced Binary Tree                                  : LC 110
+- Diameter of Binary Tree                               : LC 543
+- Binary Tree Maximum Path Sum                          : LC 124
+- Same Tree                                             : LC 100
+- Binary Tree Zigzag Level Order Traversal              : LC 103
+- Boundary Traversal of Binary Tree                     : LC 545 (Premium) / [GFG]
+- Vertical Order Traversal of a Binary Tree             : LC 987
+- Top View of Binary Tree                               : [GFG/CN]
+- Bottom View of Binary Tree                            : [GFG/CN]
+- Binary Tree Right Side View                           : LC 199
+- Symmetric Tree                                        : LC 101
+
+[Hard Problems]
+- Root to Node Path in Binary Tree                      : [InterviewBit / GFG]
+- Lowest Common Ancestor of a Binary Tree               : LC 236
+- Maximum Width of Binary Tree                          : LC 662
+- Check for Children Sum Property                       : [GFG/CN]
+- All Nodes Distance K in Binary Tree                   : LC 863
+- Amount of Time for Binary Tree to Be Infected (Burn)  : LC 2385
+- Count Complete Tree Nodes                             : LC 222
+- Construct Binary Tree from Preorder & Inorder         : LC 105
+- Construct Binary Tree from Inorder & Postorder        : LC 106
+- Serialize and Deserialize Binary Tree                 : LC 297
+- Morris Inorder Traversal                              : LC 94
+- Morris Preorder Traversal                             : LC 144
+- Flatten Binary Tree to Linked List                    : LC 114
+
+--------------------------------------------------------------------------------
+STEP 14: BINARY SEARCH TREES (BST)
+--------------------------------------------------------------------------------
+- Search in a Binary Search Tree                        : LC 700
+- Find Min/Max in BST                                   : [GFG/CN]
+- Ceil in a BST                                         : [GFG/CN]
+- Floor in a BST                                        : [GFG/CN]
+- Insert into a Binary Search Tree                      : LC 701
+- Delete Node in a BST                                  : LC 450
+- Kth Smallest Element in a BST                         : LC 230
+- Validate Binary Search Tree                           : LC 98
+- Lowest Common Ancestor of a BST                       : LC 235
+- Construct BST from Preorder Traversal                 : LC 1008
+- Inorder Successor in BST                              : LC 285 (Premium) / [GFG]
+- Binary Search Tree Iterator                           : LC 173
+- Two Sum IV - Input is a BST                           : LC 653
+- Recover Binary Search Tree                            : LC 99
+- Largest BST in Binary Tree                            : LC 333 (Premium) / [GFG]
+
+--------------------------------------------------------------------------------
+STEP 15: GRAPHS
+--------------------------------------------------------------------------------
+[Learning]
+- Graph Representation (Adjacency Matrix / List)        : [Theory/GFG]
+- Breadth First Search (BFS)                            : [GFG/CN]
+- Depth First Search (DFS)                              : [GFG/CN]
+
+[BFS/DFS Problems]
+- Number of Provinces                                   : LC 547
+- Connected Components in Undirected Graph              : LC 323 (Premium) / [GFG]
+- Rotting Oranges                                       : LC 994
+- Flood Fill                                            : LC 733
+- Cycle Detection in Undirected Graph (BFS & DFS)       : [GFG/CN]
+- 01 Matrix (Nearest 0 distance)                        : LC 542
+- Surrounded Regions                                    : LC 130
+- Number of Enclaves                                    : LC 1020
+- Word Ladder I                                         : LC 127
+- Word Ladder II                                        : LC 126
+- Number of Distinct Islands                            : LC 694 (Premium) / [GFG]
+- Is Graph Bipartite?                                   : LC 785
+
+[Topo Sort & Directed Graph Problems]
+- Topological Sort Algorithm (DFS & Kahn's BFS)         : [GFG/CN]
+- Detect Cycle in Directed Graph (DFS & BFS)            : LC 207 (Course Schedule logic)
+- Course Schedule I                                     : LC 207
+- Course Schedule II                                    : LC 210
+- Find Eventual Safe States                             : LC 802
+- Alien Dictionary                                      : LC 269 (Premium) / [GFG]
+
+[Shortest Path Algorithms]
+- Shortest Path in Undirected Graph with Unit Weights   : [GFG/CN]
+- Shortest Path in DAG                                  : [GFG/CN]
+- Dijkstra's Algorithm (Priority Queue & Set)           : [GFG/CN]
+- Shortest Path in Binary Matrix                        : LC 1091
+- Path With Minimum Effort                              : LC 1631
+- Cheapest Flights Within K Stops                       : LC 787
+- Network Delay Time                                    : LC 743
+- Number of Ways to Arrive at Destination               : LC 1976
+- Minimum Multiplications to reach End                  : [GFG/CN]
+- Bellman-Ford Algorithm                                : [GFG/CN]
+- Floyd-Warshall Algorithm                              : [GFG/CN]
+- Find the City With the Smallest Number of Neighbors   : LC 1334
+
+[Minimum Spanning Tree & Disjoint Set]
+- Prim's Algorithm for MST                              : [GFG/CN]
+- Disjoint Set Union (by Rank & Size)                   : [Template]
+- Kruskal's Algorithm for MST                           : [GFG/CN]
+- Number of Operations to Make Network Connected        : LC 1319
+- Most Stones Removed with Same Row or Column           : LC 947
+- Accounts Merge                                        : LC 721
+- Number of Islands II (Online Queries)                 : LC 305 (Premium) / [GFG]
+- Making A Large Island                                 : LC 827
+- Swim in Rising Water                                  : LC 778
+
+[Other Graph Algorithms]
+- Strongly Connected Components (Kosaraju's Algorithm)  : [GFG/CN]
+- Critical Connections in a Network (Bridges / Tarjan)  : LC 1192
+- Articulation Point in Graph                           : [GFG/CN]
+
+--------------------------------------------------------------------------------
+STEP 16: DYNAMIC PROGRAMMING
+--------------------------------------------------------------------------------
+[1D DP]
+- Climbing Stairs                                       : LC 70
+- Frog Jump                                             : [GFG/CN]
+- Frog Jump with K Distances                            : [GFG/CN]
+- House Robber (Maximum sum of non-adjacent elements)   : LC 198
+- House Robber II                                       : LC 213
+
+[2D/3D DP and DP on Grids]
+- Ninja's Training                                      : [GFG/CN]
+- Unique Paths                                          : LC 62
+- Unique Paths II                                       : LC 63
+- Minimum Path Sum in Grid                              : LC 64
+- Triangle                                              : LC 120
+- Minimum Falling Path Sum                              : LC 931
+- Cherry Pickup II (3D DP)                              : LC 1463
+
+[DP on Subsequences]
+- Subset Sum Equal to K                                 : [GFG/CN]
+- Partition Equal Subset Sum                            : LC 416
+- Partition Array Into Two Arrays to Minimize Difference: LC 2035 / LC 494
+- Count Subsets with Sum K                              : [GFG/CN]
+- Count Partitions with Given Difference                : [GFG/CN]
+- 0/1 Knapsack Problem                                  : [GFG/CN]
+- Coin Change                                           : LC 322
+- Target Sum                                            : LC 494
+- Coin Change II                                        : LC 518
+- Unbounded Knapsack                                    : [GFG/CN]
+- Rod Cutting Problem                                   : [GFG/CN]
+
+[DP on Strings]
+- Longest Common Subsequence                            : LC 1143
+- Print Longest Common Subsequence                      : [GFG/CN]
+- Longest Common Substring                              : [GFG/CN]
+- Longest Palindromic Subsequence                       : LC 516
+- Minimum Insertion Steps to Make a String Palindrome   : LC 1312
+- Delete Operation for Two Strings (Min Insert/Delete)  : LC 583
+- Shortest Common Supersequence                         : LC 1092
+- Distinct Subsequences                                 : LC 115
+- Edit Distance                                         : LC 72
+- Wildcard Matching                                     : LC 44
+
+[DP on Stocks]
+- Best Time to Buy and Sell Stock                       : LC 121
+- Best Time to Buy and Sell Stock II                    : LC 122
+- Best Time to Buy and Sell Stock III                   : LC 123
+- Best Time to Buy and Sell Stock IV                    : LC 188
+- Best Time to Buy and Sell Stock with Cooldown         : LC 309
+- Best Time to Buy and Sell Stock with Transaction Fee  : LC 714
+
+[DP on LIS (Longest Increasing Subsequence)]
+- Longest Increasing Subsequence                        : LC 300
+- Printing Longest Increasing Subsequence               : [GFG/CN]
+- Largest Divisible Subset                              : LC 368
+- Longest String Chain                                  : LC 1048
+- Longest Bitonic Subsequence                           : [GFG/CN]
+- Number of Longest Increasing Subsequence              : LC 673
+
+[MCM / Partition DP]
+- Matrix Chain Multiplication                           : [GFG/CN]
+- Minimum Cost to Cut a Stick                           : LC 1547
+- Burst Balloons                                        : LC 312
+- Evaluate Boolean Expression to True                   : [GFG/CN]
+- Palindrome Partitioning II                            : LC 132
+- Partition Array for Maximum Sum                       : LC 1043
+
+[DP on Squares]
+- Maximal Rectangle                                     : LC 85
+- Count Square Submatrices with All Ones                : LC 1277
+
+--------------------------------------------------------------------------------
+STEP 17: TRIES
+--------------------------------------------------------------------------------
+- Implement Trie (Prefix Tree)                          : LC 208
+- Implement Trie II (Prefix count, word count, erase)   : [CN]
+- Longest Word With All Prefixes                        : LC 1858 (Premium) / [GFG]
+- Number of Distinct Substrings in a String             : [GFG/CN]
+- Bit Prerequisites for TRIE Problems                   : [Theory]
+- Maximum XOR of Two Numbers in an Array                : LC 421
+- Maximum XOR With an Element From Array                : LC 1707
+
+--------------------------------------------------------------------------------
+STEP 18: ADVANCED STRINGS ALGORITHMS
+--------------------------------------------------------------------------------
+- Find the Index of the First Occurrence in a String    : LC 28 (KMP / Rabin-Karp)
+- Shortest Palindrome                                   : LC 214 (KMP / LPS)
+- Repeated String Match                                 : LC 686 (Rabin-Karp)
+- Z-Function Algorithm                                  : LC 28
+================================================================================

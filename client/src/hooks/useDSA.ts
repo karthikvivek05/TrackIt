@@ -100,6 +100,15 @@ export function useDSA() {
         if (patch.status === 'Solved' && !next.solvedAt) {
           next.solvedAt = new Date().toISOString();
         }
+        if (patch.status === 'Not Started') {
+          next.solvedAt = null;
+        }
+        if (patch.status && patch.status !== existing.status) {
+          next.history = [
+            ...existing.history,
+            { status: patch.status, at: new Date().toISOString() },
+          ];
+        }
         if (patch.revise) {
           next.revisionCount = (next.revisionCount || 0) + 1;
           next.lastRevisedAt = new Date().toISOString();

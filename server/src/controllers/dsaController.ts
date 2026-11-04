@@ -100,6 +100,9 @@ export async function updateProgress(req: AuthedRequest, res: Response) {
     Object.assign(doc, patch);
     if (patch.status && patch.status !== prevStatus) {
       doc.history.push({ status: patch.status, at: new Date() });
+      if (patch.status === 'Not Started') {
+        doc.solvedAt = null;
+      }
     }
     if (doc.status === 'Solved' && !doc.solvedAt) {
       doc.solvedAt = patch.solvedAt || new Date();

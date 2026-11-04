@@ -115,12 +115,21 @@ export default function Dashboard() {
     const countByDay = new Map<string, number>();
     const solvedProblemDays = new Set<string>();
     for (const p of Object.values(progressMap)) {
-      const dates = p.history
-        .filter((h) => h.status === 'Solved' && h.at)
-        .map((h) => h.at);
-      if (p.solvedAt) dates.push(p.solvedAt);
-      for (const date of dates) {
-        const day = toLocalDay(date);
+      const statusByDay = new Map<string, { status: string; at: string }>();
+      for (const history of p.history) {
+        if (!history.at) continue;
+        const day = toLocalDay(history.at);
+        const previous = statusByDay.get(day);
+        if (!previous || new Date(history.at).getTime() >= new Date(previous.at).getTime()) {
+          statusByDay.set(day, history);
+        }
+      }
+      if (statusByDay.size === 0 && p.solvedAt) {
+        const day = toLocalDay(p.solvedAt);
+        statusByDay.set(day, { status: 'Solved', at: p.solvedAt });
+      }
+      for (const [day, history] of statusByDay) {
+        if (history.status !== 'Solved') continue;
         const key = `${p.problemSlug}:${day}`;
         if (!solvedProblemDays.has(key)) {
           solvedProblemDays.add(key);

@@ -57,11 +57,27 @@ export default function Dashboard() {
   const { user } = useAuth();
   const goal = user?.settings?.dailyGoal ?? 2;
   const [todoItems, setTodoItems] = useState<ChecklistItem[]>([]);
+  const [currentDay, setCurrentDay] = useState(() => todayKey());
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const scheduleMidnightRefresh = () => {
+      const now = new Date();
+      const nextDay = new Date(now);
+      nextDay.setHours(24, 0, 0, 0);
+      timer = setTimeout(() => {
+        setCurrentDay(todayKey());
+        scheduleMidnightRefresh();
+      }, nextDay.getTime() - now.getTime() + 100);
+    };
+    scheduleMidnightRefresh();
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const loadTodoItems = async () => {
       try {
-        const res = await api.getEntriesByDate(todayKey());
+        const res = await api.getEntriesByDate(currentDay);
         const checklist = res.data.items.find(
           (item) => item.tracker.type === 'checklist',
         );
@@ -89,7 +105,7 @@ export default function Dashboard() {
     window.addEventListener('today-checklist-updated', loadTodoItems);
     return () =>
       window.removeEventListener('today-checklist-updated', loadTodoItems);
-  }, []);
+  }, [currentDay]);
 
   const stats = useMemo(() => {
     const toLocalDay = (value: string) => {
@@ -103,10 +119,6 @@ export default function Dashboard() {
         .filter((h) => h.status === 'Solved' && h.at)
         .map((h) => h.at);
       if (p.solvedAt) dates.push(p.solvedAt);
-      if (isDone(p.status) && p.updatedAt) dates.push(p.updatedAt);
-      if (isDone(p.status) && dates.length === 0) {
-        dates.push(todayKey());
-      }
       for (const date of dates) {
         const day = toLocalDay(date);
         const key = `${p.problemSlug}:${day}`;
@@ -117,12 +129,8 @@ export default function Dashboard() {
       }
     }
     const daySet = new Set(countByDay.keys());
-    if (!countByDay.has(todayKey()) && solvedCount > 0) {
-      countByDay.set(todayKey(), solvedCount);
-      daySet.add(todayKey());
-    }
     const { current, longest } = computeStreaks(daySet);
-    const solvedToday = countByDay.get(todayKey()) || 0;
+    const solvedToday = countByDay.get(currentDay) || 0;
 
     const diffSolved = { Easy: 0, Medium: 0, Hard: 0 };
     for (const step of steps) {
@@ -142,7 +150,7 @@ export default function Dashboard() {
       solvedToday,
       diffSolved,
     };
-  }, [steps, progressMap, solvedCount]);
+  }, [steps, progressMap, solvedCount, currentDay]);
 
   if (loading) return <FullScreenSpinner label="Loading dashboard…" />;
   if (error) return <ErrorState message={error} onRetry={reload} />;

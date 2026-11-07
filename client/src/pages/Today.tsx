@@ -23,6 +23,7 @@ export default function Today() {
   const [entryMap, setEntryMap] = useState<Record<string, Entry | null>>({});
   const [loadingEntries, setLoadingEntries] = useState(true);
   const createdDefault = useRef(false);
+  const latestWriteAt = useRef(0);
 
   const today = todayKey();
   const checklist = useMemo(
@@ -92,7 +93,8 @@ export default function Today() {
     value: boolean | number | ChecklistItem[] | null,
   ) => {
     if (!checklist) return;
-    const updatedAt = Date.now();
+    const updatedAt = Math.max(Date.now(), latestWriteAt.current + 1);
+    latestWriteAt.current = updatedAt;
     const pendingCount = Array.isArray(value)
       ? value.filter((item) => !item.done).length
       : 0;
@@ -114,7 +116,30 @@ export default function Today() {
         detail: { date: today, value, pendingCount },
       }),
     );
-    void api.upsertEntry(checklist._id, today, { value, updatedAt }).catch(() => {});
+    void api
+      .upsertEntry(checklist._id, today, { value, updatedAt })
+      .then((res) => {
+        const serverEntry = res?.entry as Entry | undefined;
+        if (
+          !serverEntry ||
+          (serverEntry.clientUpdatedAt ?? updatedAt) < latestWriteAt.current
+        ) {
+          return;
+        }
+        setEntryMap((prev) => ({ ...prev, [checklist._id]: serverEntry }));
+        window.dispatchEvent(
+          new CustomEvent('today-checklist-updated', {
+            detail: {
+              date: today,
+              value: serverEntry.value,
+              pendingCount: Array.isArray(serverEntry.value)
+                ? serverEntry.value.filter((item) => !item.done).length
+                : 0,
+            },
+          }),
+        );
+      })
+      .catch(() => {});
   };
 
   if (loading || loadingEntries) return <FullScreenSpinner label="Loading today…" />;

@@ -75,4 +75,5 @@ export interface Entry {
   value: boolean | number | ChecklistItem[] | null;
   note?: string;
   updatedAt?: string;
+  clientUpdatedAt?: number;
 }

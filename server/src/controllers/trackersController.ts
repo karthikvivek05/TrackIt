@@ -122,38 +122,48 @@ export async function upsertEntry(req: AuthedRequest, res: Response) {
     }));
   }
 
-  const existing = await EntryModel.findOne({
+  const entryFilter = {
     userId: req.userId,
     trackerId: tracker._id,
     date,
-  });
+  };
+  const update: { $set: Record<string, unknown> } = {
+    $set: { value, clientUpdatedAt: clientTs },
+  };
+  if (body.note !== undefined) update.$set.note = String(body.note);
+  const entry = await EntryModel.findOneAndUpdate(
+    {
+      ...entryFilter,
+      $or: [
+        { clientUpdatedAt: { $lt: clientTs } },
+        { clientUpdatedAt: { $exists: false } },
+        { clientUpdatedAt: 0 },
+      ],
+    },
+    update,
+    { new: true },
+  );
+  if (entry) {
+    return res.json({ entry });
+  }
 
-  if (
-    existing &&
-    existing.clientUpdatedAt > 0 &&
-    existing.clientUpdatedAt > clientTs
-  ) {
+  const existing = await EntryModel.findOne(entryFilter);
+  if (existing) {
     return res.json({ entry: existing, ignored: true });
   }
 
-  const note = body.note !== undefined ? String(body.note) : existing?.note ?? '';
-
-  let entry;
-  if (!existing) {
-    entry = new EntryModel({
-      userId: req.userId,
-      trackerId: tracker._id,
-      date,
+  try {
+    const created = await EntryModel.create({
+      ...entryFilter,
       value,
-      note,
+      note: body.note !== undefined ? String(body.note) : '',
+      clientUpdatedAt: clientTs,
     });
-  } else {
-    existing.value = value;
-    existing.note = note;
-    existing.clientUpdatedAt = clientTs;
-    entry = existing;
+    return res.json({ entry: created });
+  } catch (error: any) {
+    if (error?.code !== 11000) throw error;
+    const winner = await EntryModel.findOne(entryFilter);
+    if (!winner) throw error;
+    return res.json({ entry: winner, ignored: true });
   }
-  if (!existing) entry.clientUpdatedAt = clientTs;
-  await entry.save();
-  res.json({ entry });
 }

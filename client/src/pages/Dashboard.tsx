@@ -51,6 +51,22 @@ const HEAT_COLORS = [
   '#22c55e',
 ];
 
+function checklistItems(value: unknown): ChecklistItem[] {
+  return Array.isArray(value)
+    ? value.filter(
+        (item): item is ChecklistItem =>
+          typeof item === 'object' &&
+          item !== null &&
+          'id' in item &&
+          'label' in item &&
+          'done' in item &&
+          typeof item.id === 'string' &&
+          typeof item.label === 'string' &&
+          typeof item.done === 'boolean',
+      )
+    : [];
+}
+
 export default function Dashboard() {
   const { steps, progressMap, loading, error, reload, totalProblems, solvedCount } =
     useDSA();
@@ -75,36 +91,32 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
+    let updateVersion = 0;
     const loadTodoItems = async () => {
+      const requestVersion = updateVersion;
       try {
         const res = await api.getEntriesByDate(currentDay);
+        if (requestVersion !== updateVersion) return;
         const checklist = res.data.items.find(
           (item) => item.tracker.type === 'checklist',
         );
-        const value = checklist?.entry?.value;
-        setTodoItems(
-          Array.isArray(value)
-            ? value.filter(
-                (item): item is ChecklistItem =>
-                  typeof item === 'object' &&
-                  item !== null &&
-                  'id' in item &&
-                  'label' in item &&
-                  'done' in item &&
-                  typeof item.id === 'string' &&
-                  typeof item.label === 'string' &&
-                  typeof item.done === 'boolean',
-              )
-            : [],
-        );
+        setTodoItems(checklistItems(checklist?.entry?.value));
       } catch {
+        if (requestVersion !== updateVersion) return;
         setTodoItems([]);
       }
     };
+    const handleChecklistUpdate = (event: Event) => {
+      const detail = (event as CustomEvent<{ date?: string; value?: unknown }>).detail;
+      if (detail?.date === currentDay) {
+        updateVersion += 1;
+        setTodoItems(checklistItems(detail.value));
+      }
+    };
     void loadTodoItems();
-    window.addEventListener('today-checklist-updated', loadTodoItems);
+    window.addEventListener('today-checklist-updated', handleChecklistUpdate);
     return () =>
-      window.removeEventListener('today-checklist-updated', loadTodoItems);
+      window.removeEventListener('today-checklist-updated', handleChecklistUpdate);
   }, [currentDay]);
 
   const stats = useMemo(() => {

@@ -128,7 +128,11 @@ export async function upsertEntry(req: AuthedRequest, res: Response) {
     date,
   });
 
-  if (existing?.updatedAt && existing.updatedAt.getTime() > clientTs) {
+  if (
+    existing &&
+    existing.clientUpdatedAt > 0 &&
+    existing.clientUpdatedAt > clientTs
+  ) {
     return res.json({ entry: existing, ignored: true });
   }
 
@@ -146,8 +150,10 @@ export async function upsertEntry(req: AuthedRequest, res: Response) {
   } else {
     existing.value = value;
     existing.note = note;
+    existing.clientUpdatedAt = clientTs;
     entry = existing;
   }
+  if (!existing) entry.clientUpdatedAt = clientTs;
   await entry.save();
   res.json({ entry });
 }

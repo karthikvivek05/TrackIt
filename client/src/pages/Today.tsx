@@ -111,7 +111,7 @@ export default function Today() {
     });
     window.dispatchEvent(
       new CustomEvent('today-checklist-updated', {
-        detail: { pendingCount },
+        detail: { date: today, value, pendingCount },
       }),
     );
     void api.upsertEntry(checklist._id, today, { value, updatedAt }).catch(() => {});

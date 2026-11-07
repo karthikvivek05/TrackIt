@@ -15,6 +15,7 @@ const entrySchema = new Schema(
     date: { type: String, required: true }, // YYYY-MM-DD
     value: { type: Schema.Types.Mixed, default: null },
     note: { type: String, default: '' },
+    clientUpdatedAt: { type: Number, default: 0 },
   },
   { timestamps: true },
 );
